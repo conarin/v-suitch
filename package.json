@@ -16,5 +16,8 @@
     "@types/node": "^20.14.2",
     "tsx": "^4.11.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "osc-js": "^2.4.1"
   }
 }

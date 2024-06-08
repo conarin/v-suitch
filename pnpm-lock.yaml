@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      osc-js:
+        specifier: ^2.4.1
+        version: 2.4.1
     devDependencies:
       '@types/node':
         specifier: ^20.14.2
@@ -174,6 +178,9 @@ packages:
   get-tsconfig@4.7.5:
     resolution: {integrity: sha512-ZCuZCnlqNzjb4QprAzXKdpp/gh6KTxSJuw3IBsPnV/7fV4NxC9ckB+vPTt8w7fJA0TaSD7c55BR47JD6MEDyDw==}
 
+  osc-js@2.4.1:
+    resolution: {integrity: sha512-QlSeRKJclL47FNvO1MUCAAp9frmCF9zcYbnf6R9HpcklAst8ZyX3ISsk1v/Vghr/5GmXn0bhVjFXF9h+hfnl4Q==}
+
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
@@ -189,6 +196,18 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  ws@8.17.0:
+    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
 
 snapshots:
 
@@ -298,6 +317,13 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
+  osc-js@2.4.1:
+    dependencies:
+      ws: 8.17.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   resolve-pkg-maps@1.0.0: {}
 
   tsx@4.11.2:
@@ -310,3 +336,5 @@ snapshots:
   typescript@5.4.5: {}
 
   undici-types@5.26.5: {}
+
+  ws@8.17.0: {}
