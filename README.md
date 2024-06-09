@@ -44,15 +44,15 @@ graph LR
 | Key               | Value                                                                                                                                                                                        |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SWITCH_BOT_TOKEN  | SwitchBotのトークン。<br/>取得方法は[公式サイト](https://support.switch-bot.com/hc/ja/articles/12822710195351-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)を確認。         |
-| SEITCH_BOT_SECRET | SwitchBotのクライアントシークレット。<br/>取得方法は[公式サイト](https://support.switch-bot.com/hc/ja/articles/12822710195351-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)を確認。 |
-| SLEEP_SCENE_ID    | 就寝時(パラメータが`true`のとき)に実行させるシーンのID。<br/>シーンIDは[`.fetchScenes()`](#SeitchBotクラスの使い方)メソッドで取得可能。                                                                                                  |
-| WAKE_UP_SCENE_ID  | 起床時(パラメータが`false`のとき)に実行させるシーンのID。<br/>シーンIDは[`.fetchScenes()`](#SeitchBotクラスの使い方)メソッドで取得可能。                                                                                                 |
+| SWITCH_BOT_SECRET | SwitchBotのクライアントシークレット。<br/>取得方法は[公式サイト](https://support.switch-bot.com/hc/ja/articles/12822710195351-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)を確認。 |
+| SLEEP_SCENE_ID    | 就寝時(パラメータが`true`のとき)に実行させるシーンのID。<br/>シーンIDは[`.fetchScenes()`](#SwitchBotクラスの使い方)メソッドで取得可能。                                                                                                  |
+| WAKE_UP_SCENE_ID  | 起床時(パラメータが`false`のとき)に実行させるシーンのID。<br/>シーンIDは[`.fetchScenes()`](#SwitchBotクラスの使い方)メソッドで取得可能。                                                                                                 |
 | PARAMETER_NAME    | Expression Parametersに設定したパラメータ名。                                                                                                                                                            |
 | HOST              | VRChatを起動しているホスト。<br/>デフォルトは`127.0.0.1`。                                                                                                                                                     |
 | IN_PORT           | OSCの受信ポート(VRChat側の送信ポート)。<br/>デフォルトは`9001`。                                                                                                                                                  |
 | OUT_PORT          | OSCの送信ポート(VRChat側の受信ポート)。<br/>デフォルトは`9000`。                                                                                                                                                  |
 
-## SeitchBotクラスの使い方
+## SwitchBotクラスの使い方
 ```ts
 import SwitchBot from './switchBot';
 

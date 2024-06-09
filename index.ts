@@ -3,7 +3,7 @@ import OSC from 'osc-js';
 import SwitchBot from './switchBot';
 
 const TOKEN: string = env.SWITCH_BOT_TOKEN ?? '';
-const SECRET: string = env.SEITCH_BOT_SECRET ?? '';
+const SECRET: string = env.SWITCH_BOT_SECRET ?? '';
 const SLEEP_SCENE_ID: string = env.SLEEP_SCENE_ID ?? '';
 const WAKE_UP_SCENE_ID: string = env.WAKE_UP_SCENE_ID ?? '';
 
