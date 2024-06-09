@@ -32,7 +32,7 @@ export default class SwitchBot {
         this.TOKEN = token;
         this.SECRET = secret;
     }
-    
+
     private sign(t: string, nonce: string): string {
         const data: string = this.TOKEN + t + nonce;
         return crypto.createHmac('sha256', this.SECRET)
@@ -91,7 +91,7 @@ export default class SwitchBot {
     public async fetchDeviceStatus(deviceId: string): Promise<(object | undefined)> {
         return await this.fetch(`/v1.1/devices/${encodeURIComponent(deviceId)}/status`, this.options('GET'));
     }
-    
+
     /**
      * 物理デバイスまたは仮想デバイスに制御コマンドを送信する。
      * https://github.com/OpenWonderLabs/SwitchBotAPI?tab=readme-ov-file#send-device-control-commands
