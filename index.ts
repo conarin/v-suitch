@@ -23,7 +23,7 @@ type Message = {
 };
 
 osc.on(`/avatar/parameters/${PARAMETER_NAME}`, async (message: Message) => {
-    if (typeof message.args[0] !== 'boolean') return console.error('パラメーターはBool型にしてください');
+    if (typeof message.args[0] !== 'boolean') return console.error('パラメータはBool型にしてください');
     
     let res: object | undefined;
     if (message.args[0]) res = await switchBot.executeScene(SLEEP_SCENE_ID);
