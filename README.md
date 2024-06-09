@@ -86,4 +86,4 @@ console.dir(executionResult, {depth: null});
 ## 備忘録
  - OSCが既に有効になっている場合、アバターを更新しても`C:\Users\<UserName>\AppData\LocalLow\VRChat\VRChat\OSC\<userId>\Avatars\<avatarId>.json`ファイルは更新されない。OSCメニューから設定をリセット、または手動で削除して生成し直す必要がある
  - 稀に`500 Internal Server Error`を返してくるので、その時はやり直す
- - ワールドを移動すると再実行される仕様ため、パラメータの`Saved`は有効にすることを推奨
+ - ワールドを移動すると再実行される仕様のため、パラメータの`Saved`は有効にすることを推奨
