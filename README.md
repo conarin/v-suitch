@@ -79,8 +79,8 @@ const scenes = await switchBot.fetchScenes();
 console.dir(scenes, {depth: null});
 
 // シーンを実行する
-const executedResult = await switchBot.executeScene('sceneId');
-console.dir(executedResult, {depth: null});
+const executionResult = await switchBot.executeScene('sceneId');
+console.dir(executionResult, {depth: null});
 ```
 
 ## 備忘録
