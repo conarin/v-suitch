@@ -5,24 +5,26 @@ V睡用と言いつつSwitchBot APIを叩いているだけなので、SwitchBot
 
 ```mermaid
 graph LR
-    A[VRChat Expression Menu]-->|OSC|B["Node.js(tsx)"]-->|HTTPS|C[SwitchBot API]
+    A[VRChat Expression Menu]-->|OSC|B["Bun(TypeScript)"]-->|HTTPS|C[SwitchBot API]
 ```
 
 ## 利用手順
-1. [Node.js](https://nodejs.org)(v20以降)をインストールする
-2. [pnpm](https://pnpm.io/ja)をインストールする
+1. [Bun](https://bun.sh)をインストールする
    ```
-   npm install -g pnpm
+   powershell -c "irm bun.sh/install.ps1 | iex"
    ```
-3. 本リポジトリを任意のディレクトリにクローンする  
+2. 本リポジトリを任意のディレクトリにクローンする  
    [Git](https://www.git-scm.com/downloads)がインストールされていなければインストールするか、右上の`<> Code ▼`->`Download ZIP`からダウンロードして解凍する
    ```
    git clone https://github.com/conarin/v-suitch.git
-   cd v-suitch
+   ```
+3. `v-suitch`ディレクトリに移動する
+   ```
+   cd v-suitch 
    ```
 4. 依存パッケージをインストールする
    ```
-   pnpm install
+   bun install
    ```
 5. [環境変数](#環境変数)を設定する
    ```
@@ -36,7 +38,7 @@ graph LR
    OSCが既に有効になっている場合は`設定をリセット`を押す
 9. 実行する
    ```
-   pnpm run start
+   bun run start
    ```
 10. Expression Menuから照明を点滅できる！
 
