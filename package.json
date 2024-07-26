@@ -4,7 +4,8 @@
   "description": "VRChat で Expression Menu から SwitchBot デバイスを操作するやつ",
   "main": "index.ts",
   "scripts": {
-    "start": "tsc --noEmit && tsx --env-file=.env ./index.ts"
+    "start": "bun ./index.ts",
+    "check": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20"
@@ -14,7 +15,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.14.2",
-    "tsx": "^4.11.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
