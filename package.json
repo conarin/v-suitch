@@ -2,9 +2,9 @@
   "name": "v-suitch",
   "version": "1.0.0",
   "description": "VRChat で Expression Menu から SwitchBot デバイスを操作するやつ",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "bun ./index.ts",
+    "start": "bun src/index.ts",
     "check": "tsc --noEmit"
   },
   "engines": {
