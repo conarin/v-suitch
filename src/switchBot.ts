@@ -55,8 +55,8 @@ export default class SwitchBot {
         };
         if (method === 'POST') options.headers['Content-Type'] = 'application/json; charset=utf8';
         if (typeof body !== 'undefined') {
-            options.headers['Content-Length'] = JSON.stringify(body).length.toString();
             options.body = JSON.stringify(body);
+            options.headers['Content-Length'] = options.body.length.toString();
         }
 
         return options;
