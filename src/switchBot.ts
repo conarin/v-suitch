@@ -1,4 +1,4 @@
-import crypto from 'node:crypto';
+import * as crypto from 'node:crypto';
 
 type Method = 'GET' | 'PUT' | 'POST' | 'DELETE';
 type Options = {
@@ -62,16 +62,14 @@ export default class SwitchBot {
         return options;
     }
 
-    private async fetch(uri: string, options: Options): Promise<(object | undefined)> {
-        return fetch(new URL(uri, 'https://api.switch-bot.com'), options)
+    private async fetch(url: string, options: Options): Promise<object> {
+        return fetch(new URL(url, 'https://api.switch-bot.com'), options)
             .then(res => {
                 if (res.ok) return res.json();
                 throw new Error(`${res.status}: ${res.statusText}`);
             }).then(res => {
                 if (res?.statusCode === 100) return res;
                 throw new Error(res.message);
-            }).catch(err => {
-                console.error(err);
             });
     }
 
@@ -79,8 +77,8 @@ export default class SwitchBot {
      * 物理デバイスと仮想デバイスの一覧を取得する。
      * https://github.com/OpenWonderLabs/SwitchBotAPI?tab=readme-ov-file#get-device-list
      */
-    public async fetchDevices(): Promise<(object | undefined)> {
-        return await this.fetch('/v1.1/devices', this.options('GET'));
+    public fetchDevices(): Promise<object> {
+        return this.fetch('/v1.1/devices', this.options('GET'));
     }
 
     /**
@@ -88,8 +86,8 @@ export default class SwitchBot {
      * https://github.com/OpenWonderLabs/SwitchBotAPI?tab=readme-ov-file#get-device-status
      * @param deviceId
      */
-    public async fetchDeviceStatus(deviceId: string): Promise<(object | undefined)> {
-        return await this.fetch(`/v1.1/devices/${encodeURIComponent(deviceId)}/status`, this.options('GET'));
+    public fetchDeviceStatus(deviceId: string): Promise<object> {
+        return this.fetch(`/v1.1/devices/${encodeURIComponent(deviceId)}/status`, this.options('GET'));
     }
 
     /**
@@ -98,16 +96,16 @@ export default class SwitchBot {
      * @param deviceId
      * @param body
      */
-    public async sendCommand(deviceId: string, body: Body): Promise<(object | undefined)> {
-        return await this.fetch(`/v1.1/devices/${encodeURIComponent(deviceId)}/commands`, this.options('POST', body));
+    public sendCommand(deviceId: string, body: Body): Promise<object> {
+        return this.fetch(`/v1.1/devices/${encodeURIComponent(deviceId)}/commands`, this.options('POST', body));
     }
 
     /**
      * シーンの一覧を取得する。
      * https://github.com/OpenWonderLabs/SwitchBotAPI?tab=readme-ov-file#get-scene-list
      */
-    public async fetchScenes(): Promise<(object | undefined)> {
-        return await this.fetch('/v1.1/scenes', this.options('GET'));
+    public fetchScenes(): Promise<object> {
+        return this.fetch('/v1.1/scenes', this.options('GET'));
     }
 
     /**
@@ -115,7 +113,7 @@ export default class SwitchBot {
      * https://github.com/OpenWonderLabs/SwitchBotAPI?tab=readme-ov-file#execute-manual-scenes
      * @param sceneId
      */
-    public async executeScene(sceneId: string): Promise<(object | undefined)> {
-        return await this.fetch(`/v1.1/scenes/${encodeURIComponent(sceneId)}/execute`, this.options('POST'));
+    public executeScene(sceneId: string): Promise<object> {
+        return this.fetch(`/v1.1/scenes/${encodeURIComponent(sceneId)}/execute`, this.options('POST'));
     }
 }

@@ -24,13 +24,19 @@ type Message = {
 
 osc.on(`/avatar/parameters/${PARAMETER_NAME}`, async (message: Message) => {
     if (typeof message.args[0] !== 'boolean') return console.error('パラメータはBool型にしてください');
-
-    let res: object | undefined;
-    if (message.args[0]) res = await switchBot.executeScene(SLEEP_SCENE_ID);
-    else res = await switchBot.executeScene(WAKE_UP_SCENE_ID);
-
-    const sceneName: string = message.args[0] ? '就寝' : '起床';
-    const executionResult: string = typeof res === 'undefined' ? '失敗' : '成功';
+    
+    const [sceneId, sceneName]: [string, string] = (() => {
+        if (message.args[0]) return [SLEEP_SCENE_ID, '就寝'];
+        else return [WAKE_UP_SCENE_ID, '起床'];
+    })();
+    
+    const executionResult: string = await switchBot.executeScene(sceneId)
+        .then(() => '成功')
+        .catch(error => {
+            console.error(error);
+            return '失敗';
+        });
+    
     console.log(`${sceneName}シーンの実行${executionResult}`);
 });
 
